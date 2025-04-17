@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
+using SharedNewtonsoft.Json;
 
 namespace NettonsoftTryConsole
 {
@@ -20,7 +16,7 @@ namespace NettonsoftTryConsole
               ]
             }";
             Movie o = JsonConvert.DeserializeObject<Movie>(movieJson);
-            Console.WriteLine(o.Name);
+            Console.WriteLine(o.Age);
         }
     }
 

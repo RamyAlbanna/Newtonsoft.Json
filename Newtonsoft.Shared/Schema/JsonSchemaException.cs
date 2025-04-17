@@ -26,9 +26,9 @@
 using System;
 using System.Runtime.Serialization;
 
-#nullable disable
 
-namespace Newtonsoft.Json.Schema
+
+namespace SharedNewtonsoft.Json.Schema
 {
     /// <summary>
     /// <para>

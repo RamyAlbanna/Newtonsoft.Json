@@ -37,11 +37,11 @@ using Microsoft.CSharp.RuntimeBinder;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Globalization;
-using Newtonsoft.Json.Serialization;
+using SharedNewtonsoft.Json.Serialization;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Newtonsoft.Json.Utilities
+namespace SharedNewtonsoft.Json.Utilities
 {
     internal static class DynamicUtils
     {

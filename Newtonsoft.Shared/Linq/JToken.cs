@@ -25,7 +25,7 @@
 
 using System;
 using System.Collections.Generic;
-using Newtonsoft.Json.Linq.JsonPath;
+using SharedNewtonsoft.Json.Linq.JsonPath;
 #if HAVE_DYNAMIC
 using System.Dynamic;
 using System.Linq.Expressions;
@@ -34,20 +34,20 @@ using System.IO;
 #if HAVE_BIG_INTEGER
 using System.Numerics;
 #endif
-using Newtonsoft.Json.Utilities;
+using SharedNewtonsoft.Json.Utilities;
 using System.Diagnostics;
 using System.Globalization;
 using System.Collections;
 using System.Runtime.CompilerServices;
 using System.Diagnostics.CodeAnalysis;
 #if !HAVE_LINQ
-using Newtonsoft.Json.Utilities.LinqBridge;
+using SharedNewtonsoft.Json.Utilities.LinqBridge;
 #else
 using System.Linq;
 #endif
-using Newtonsoft.Json.Serialization;
+using SharedNewtonsoft.Json.Serialization;
 
-namespace Newtonsoft.Json.Linq
+namespace SharedNewtonsoft.Json.Linq
 {
     /// <summary>
     /// Represents an abstract JSON token.
@@ -81,28 +81,28 @@ namespace Newtonsoft.Json.Linq
         private static readonly JTokenType[] BytesTypes = new[] { JTokenType.Bytes, JTokenType.String, JTokenType.Comment, JTokenType.Raw, JTokenType.Integer };
 
 #if HAVE_APPCONTEXT
-        [FeatureSwitchDefinition("Newtonsoft.Json.Linq.JToken.SerializationIsSupported")]
+        [FeatureSwitchDefinition("SharedNewtonsoft.Json.Linq.JToken.SerializationIsSupported")]
         [FeatureGuard(typeof(RequiresUnreferencedCodeAttribute))]
         [FeatureGuard(typeof(RequiresDynamicCodeAttribute))]
-        internal static bool SerializationIsSupported => AppContext.TryGetSwitch("Newtonsoft.Json.Linq.JToken.SerializationIsSupported", out bool isSupported) ? isSupported : true;
+        internal static bool SerializationIsSupported => AppContext.TryGetSwitch("SharedNewtonsoft.Json.Linq.JToken.SerializationIsSupported", out bool isSupported) ? isSupported : true;
 
-        internal const string SerializationNotSupportedMessage = "Newtonsoft.Json serialization is not compatible with trimming and has been disabled. Newtonsoft.Json.Linq.JToken.SerializationIsSupported is set to false.";
+        internal const string SerializationNotSupportedMessage = "SharedNewtonsoft.Json serialization is not compatible with trimming and has been disabled. SharedNewtonsoft.Json.Linq.JToken.SerializationIsSupported is set to false.";
 
 #if HAVE_COMPONENT_MODEL
-        [FeatureSwitchDefinition("Newtonsoft.Json.Linq.JToken.ComponentModelIsSupported")]
+        [FeatureSwitchDefinition("SharedNewtonsoft.Json.Linq.JToken.ComponentModelIsSupported")]
         [FeatureGuard(typeof(RequiresUnreferencedCodeAttribute))]
-        internal static bool ComponentModelIsSupported => AppContext.TryGetSwitch("Newtonsoft.Json.Linq.JToken.ComponentModelIsSupported", out bool isSupported) ? isSupported : true;
+        internal static bool ComponentModelIsSupported => AppContext.TryGetSwitch("SharedNewtonsoft.Json.Linq.JToken.ComponentModelIsSupported", out bool isSupported) ? isSupported : true;
 
-        internal const string ComponentModelNotSupportedMessage = "Newtonsoft.Json support for System.ComponentModel is not compatible with trimming and has been disabled. Newtonsoft.Json.Linq.JToken.ComponentModelIsSupported is set to false.";
+        internal const string ComponentModelNotSupportedMessage = "SharedNewtonsoft.Json support for System.ComponentModel is not compatible with trimming and has been disabled. SharedNewtonsoft.Json.Linq.JToken.ComponentModelIsSupported is set to false.";
 #endif // HAVE_COMPONENT_MODEL
 
 #if HAVE_DYNAMIC
-        [FeatureSwitchDefinition("Newtonsoft.Json.Linq.JToken.DynamicIsSupported")]
+        [FeatureSwitchDefinition("SharedNewtonsoft.Json.Linq.JToken.DynamicIsSupported")]
         [FeatureGuard(typeof(RequiresUnreferencedCodeAttribute))]
         [FeatureGuard(typeof(RequiresDynamicCodeAttribute))]
-        internal static bool DynamicIsSupported => AppContext.TryGetSwitch("Newtonsoft.Json.Linq.JToken.DynamicIsSupported", out bool isSupported) ? isSupported : true;
+        internal static bool DynamicIsSupported => AppContext.TryGetSwitch("SharedNewtonsoft.Json.Linq.JToken.DynamicIsSupported", out bool isSupported) ? isSupported : true;
 
-        internal const string DynamicNotSupportedMessage = "Newtonsoft.Json support for dynamic is not compatible with trimming and has been disabled. Newtonsoft.Json.Linq.JToken.DynamicIsSupported is set to false.";
+        internal const string DynamicNotSupportedMessage = "SharedNewtonsoft.Json support for dynamic is not compatible with trimming and has been disabled. SharedNewtonsoft.Json.Linq.JToken.DynamicIsSupported is set to false.";
 #endif // HAVE_DYNAMIC
 
 #endif // HAVE_APPCONTEXT
@@ -366,7 +366,7 @@ namespace Newtonsoft.Json.Linq
         {
             JToken? token = this[key];
 
-            // null check to fix MonoTouch issue - https://github.com/dolbz/Newtonsoft.Json/commit/a24e3062846b30ee505f3271ac08862bb471b822
+            // null check to fix MonoTouch issue - https://github.com/dolbz/SharedNewtonsoft.Json/commit/a24e3062846b30ee505f3271ac08862bb471b822
             return token == null ? default : Extensions.Convert<JToken, T>(token);
         }
 
@@ -548,7 +548,7 @@ namespace Newtonsoft.Json.Linq
 
         #region Cast from operators
         /// <summary>
-        /// Performs an explicit conversion from <see cref="Newtonsoft.Json.Linq.JToken"/> to <see cref="System.Boolean"/>.
+        /// Performs an explicit conversion from <see cref="SharedNewtonsoft.Json.Linq.JToken"/> to <see cref="System.Boolean"/>.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>The result of the conversion.</returns>
@@ -572,7 +572,7 @@ namespace Newtonsoft.Json.Linq
 
 #if HAVE_DATE_TIME_OFFSET
         /// <summary>
-        /// Performs an explicit conversion from <see cref="Newtonsoft.Json.Linq.JToken"/> to <see cref="System.DateTimeOffset"/>.
+        /// Performs an explicit conversion from <see cref="SharedNewtonsoft.Json.Linq.JToken"/> to <see cref="System.DateTimeOffset"/>.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>The result of the conversion.</returns>
@@ -916,7 +916,7 @@ namespace Newtonsoft.Json.Linq
         }
 
         /// <summary>
-        /// Performs an explicit conversion from <see cref="Newtonsoft.Json.Linq.JToken"/> to <see cref="System.SByte"/>.
+        /// Performs an explicit conversion from <see cref="SharedNewtonsoft.Json.Linq.JToken"/> to <see cref="System.SByte"/>.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>The result of the conversion.</returns>
@@ -1350,7 +1350,7 @@ namespace Newtonsoft.Json.Linq
         }
 
         /// <summary>
-        /// Performs an explicit conversion from <see cref="Newtonsoft.Json.Linq.JToken"/> to <see cref="System.UInt64"/>.
+        /// Performs an explicit conversion from <see cref="SharedNewtonsoft.Json.Linq.JToken"/> to <see cref="System.UInt64"/>.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>The result of the conversion.</returns>

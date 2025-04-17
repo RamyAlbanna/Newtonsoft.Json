@@ -29,9 +29,9 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Newtonsoft.Json.Utilities;
+using SharedNewtonsoft.Json.Utilities;
 
-namespace Newtonsoft.Json
+namespace SharedNewtonsoft.Json
 {
     public abstract partial class JsonReader
 #if HAVE_ASYNC_DISPOSABLE

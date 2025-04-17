@@ -31,18 +31,18 @@ using System.IO;
 using System.Numerics;
 #endif
 using System.Text;
-using Newtonsoft.Json.Utilities;
-using Newtonsoft.Json.Linq;
+using SharedNewtonsoft.Json.Utilities;
+using SharedNewtonsoft.Json.Linq;
 using System.Globalization;
 
-#nullable disable
 
-namespace Newtonsoft.Json.Bson
+
+namespace SharedNewtonsoft.Json.Bson
 {
     /// <summary>
     /// Represents a writer that provides a fast, non-cached, forward-only way of generating BSON data.
     /// </summary>
-    [Obsolete("BSON reading and writing has been moved to its own package. See https://www.nuget.org/packages/Newtonsoft.Json.Bson for more details.")]
+    [Obsolete("BSON reading and writing has been moved to its own package. See https://www.nuget.org/packages/SharedNewtonsoft.Json.Bson for more details.")]
     public class BsonWriter : JsonWriter
     {
         private readonly BsonBinaryWriter _writer;

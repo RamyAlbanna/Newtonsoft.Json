@@ -23,9 +23,9 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 #endregion
 
-#nullable disable
 
-namespace Newtonsoft.Json.Bson
+
+namespace SharedNewtonsoft.Json.Bson
 {
     internal enum BsonType : sbyte
     {

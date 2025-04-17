@@ -27,21 +27,21 @@ using System;
 using System.Globalization;
 using System.ComponentModel;
 using System.Collections.Generic;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Utilities;
-using Newtonsoft.Json.Serialization;
+using SharedNewtonsoft.Json.Linq;
+using SharedNewtonsoft.Json.Utilities;
+using SharedNewtonsoft.Json.Serialization;
 using System.Diagnostics.CodeAnalysis;
 
 #if !HAVE_LINQ
-using Newtonsoft.Json.Utilities.LinqBridge;
+using SharedNewtonsoft.Json.Utilities.LinqBridge;
 #else
 using System.Linq;
 
 #endif
 
-#nullable disable
 
-namespace Newtonsoft.Json.Schema
+
+namespace SharedNewtonsoft.Json.Schema
 {
     /// <summary>
     /// <para>

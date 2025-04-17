@@ -34,15 +34,15 @@ using System.Text.RegularExpressions;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Newtonsoft.Json.Utilities
+namespace SharedNewtonsoft.Json.Utilities
 {
     internal delegate T Creator<T>();
 
     internal static class MiscellaneousUtils
     {
-        internal const string TrimWarning = "Newtonsoft.Json relies on reflection over types that may be removed when trimming.";
+        internal const string TrimWarning = "SharedNewtonsoft.Json relies on reflection over types that may be removed when trimming.";
 
-        internal const string AotWarning = "Newtonsoft.Json relies on dynamically creating types that may not be available with Ahead of Time compilation.";
+        internal const string AotWarning = "SharedNewtonsoft.Json relies on dynamically creating types that may not be available with Ahead of Time compilation.";
 
         [Conditional("DEBUG")]
         public static void Assert([DoesNotReturnIf(false)] bool condition, string? message = null)

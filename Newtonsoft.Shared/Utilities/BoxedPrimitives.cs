@@ -26,7 +26,7 @@
 using System;
 using System.Diagnostics;
 
-namespace Newtonsoft.Json.Utilities
+namespace SharedNewtonsoft.Json.Utilities
 {
     internal static class BoxedPrimitives
     {

@@ -27,13 +27,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Collections.ObjectModel;
-using Newtonsoft.Json.Utilities;
+using SharedNewtonsoft.Json.Utilities;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Newtonsoft.Json.Serialization
+namespace SharedNewtonsoft.Json.Serialization
 {
     /// <summary>
     /// A collection of <see cref="JsonProperty"/> objects.

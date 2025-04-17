@@ -27,10 +27,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using Newtonsoft.Json.Utilities;
+using SharedNewtonsoft.Json.Utilities;
 using System.Globalization;
 
-namespace Newtonsoft.Json.Linq
+namespace SharedNewtonsoft.Json.Linq
 {
     /// <summary>
     /// Represents a JSON constructor.

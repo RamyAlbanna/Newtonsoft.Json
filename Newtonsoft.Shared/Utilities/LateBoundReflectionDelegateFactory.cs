@@ -24,15 +24,15 @@
 #endregion
 
 using System;
-using Newtonsoft.Json.Serialization;
+using SharedNewtonsoft.Json.Serialization;
 using System.Reflection;
 using System.Diagnostics.CodeAnalysis;
 
 #if !HAVE_LINQ
-using Newtonsoft.Json.Utilities.LinqBridge;
+using SharedNewtonsoft.Json.Utilities.LinqBridge;
 #endif
 
-namespace Newtonsoft.Json.Utilities
+namespace SharedNewtonsoft.Json.Utilities
 {
     internal class LateBoundReflectionDelegateFactory : ReflectionDelegateFactory
     {
@@ -48,7 +48,7 @@ namespace Newtonsoft.Json.Utilities
             if (method is ConstructorInfo c)
             {
                 // don't convert to method group to avoid medium trust issues
-                // https://github.com/JamesNK/Newtonsoft.Json/issues/476
+                // https://github.com/JamesNK/SharedNewtonsoft.Json/issues/476
                 return a => c.Invoke(a);
             }
 

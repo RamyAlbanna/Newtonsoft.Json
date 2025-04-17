@@ -28,10 +28,10 @@ using System.Collections;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Runtime.Serialization.Formatters;
-using Newtonsoft.Json.Utilities;
+using SharedNewtonsoft.Json.Utilities;
 using System.Runtime.Serialization;
 
-namespace Newtonsoft.Json.Serialization
+namespace SharedNewtonsoft.Json.Serialization
 {
     [RequiresUnreferencedCode(MiscellaneousUtils.TrimWarning)]
     [RequiresDynamicCode(MiscellaneousUtils.AotWarning)]

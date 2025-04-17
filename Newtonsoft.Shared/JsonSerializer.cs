@@ -30,15 +30,15 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Runtime.Serialization.Formatters;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Utilities;
+using SharedNewtonsoft.Json.Converters;
+using SharedNewtonsoft.Json.Serialization;
+using SharedNewtonsoft.Json.Utilities;
 using System.Runtime.Serialization;
-using ErrorEventArgs = Newtonsoft.Json.Serialization.ErrorEventArgs;
+using ErrorEventArgs = SharedNewtonsoft.Json.Serialization.ErrorEventArgs;
 using System.Runtime.CompilerServices;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Newtonsoft.Json
+namespace SharedNewtonsoft.Json
 {
     /// <summary>
     /// Serializes and deserializes objects into and from the JSON format.
@@ -885,7 +885,7 @@ namespace Newtonsoft.Json
             return DeserializeInternal(reader, objectType);
         }
 
-        internal virtual object? DeserializeInternal(JsonReader reader, Type? objectType)
+        internal virtual object DeserializeInternal(JsonReader reader, Type? objectType)
         {
             ValidationUtils.ArgumentNotNull(reader, nameof(reader));
 
@@ -896,18 +896,18 @@ namespace Newtonsoft.Json
                 out DateParseHandling? previousDateParseHandling,
                 out FloatParseHandling? previousFloatParseHandling,
                 out int? previousMaxDepth,
-                out string? previousDateFormatString);
+                out string previousDateFormatString);
 
-            TraceJsonReader? traceJsonReader = (TraceWriter != null && TraceWriter.LevelFilter >= TraceLevel.Verbose)
+            TraceJsonReader traceJsonReader = (TraceWriter != null && TraceWriter.LevelFilter >= TraceLevel.Verbose)
                 ? CreateTraceJsonReader(reader)
                 : null;
 
             JsonSerializerInternalReader serializerReader = new JsonSerializerInternalReader(this);
-            object? value = serializerReader.Deserialize(traceJsonReader ?? reader, objectType, CheckAdditionalContent);
+            object value = serializerReader.Deserialize(traceJsonReader ?? reader, objectType, CheckAdditionalContent);
 
             if (traceJsonReader != null)
             {
-                TraceWriter!.Trace(TraceLevel.Verbose, traceJsonReader.GetDeserializedJsonMessage(), null);
+                TraceWriter.Trace(TraceLevel.Verbose, traceJsonReader.GetDeserializedJsonMessage(), null);
             }
 
             ResetReader(reader, previousCulture, previousDateTimeZoneHandling, previousDateParseHandling, previousFloatParseHandling, previousMaxDepth, previousDateFormatString);

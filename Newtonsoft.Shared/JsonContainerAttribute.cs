@@ -24,9 +24,9 @@
 #endregion
 
 using System;
-using Newtonsoft.Json.Serialization;
+using SharedNewtonsoft.Json.Serialization;
 
-namespace Newtonsoft.Json
+namespace SharedNewtonsoft.Json
 {
     /// <summary>
     /// Instructs the <see cref="JsonSerializer"/> how to serialize the object.

@@ -26,15 +26,15 @@
 using System;
 using System.Collections.Generic;
 #if !HAVE_LINQ
-using Newtonsoft.Json.Utilities.LinqBridge;
+using SharedNewtonsoft.Json.Utilities.LinqBridge;
 #else
 using System.Linq;
 
 #endif
 
-#nullable disable
 
-namespace Newtonsoft.Json.Schema
+
+namespace SharedNewtonsoft.Json.Schema
 {
     /// <summary>
     /// <para>

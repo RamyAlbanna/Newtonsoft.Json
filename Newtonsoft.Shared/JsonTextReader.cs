@@ -31,9 +31,9 @@ using System.Diagnostics;
 #if HAVE_BIG_INTEGER
 using System.Numerics;
 #endif
-using Newtonsoft.Json.Utilities;
+using SharedNewtonsoft.Json.Utilities;
 
-namespace Newtonsoft.Json
+namespace SharedNewtonsoft.Json
 {
     internal enum ReadType
     {
@@ -905,7 +905,7 @@ namespace Newtonsoft.Json
             SetStateBasedOnCurrent();
         }
 
-        private object? ReadNumberValue(ReadType readType)
+        private object ReadNumberValue(ReadType readType)
         {
             EnsureBuffer();
             MiscellaneousUtils.Assert(_chars != null);

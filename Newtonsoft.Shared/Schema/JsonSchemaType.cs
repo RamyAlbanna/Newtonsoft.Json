@@ -25,9 +25,9 @@
 
 using System;
 
-#nullable disable
 
-namespace Newtonsoft.Json.Schema
+
+namespace SharedNewtonsoft.Json.Schema
 {
     /// <summary>
     /// <para>

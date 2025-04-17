@@ -26,9 +26,8 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
-using Newtonsoft.Json.Utilities;
-
-namespace Newtonsoft.Json.Converters
+using SharedNewtonsoft.Json.Utilities;
+namespace SharedNewtonsoft.Json.Converters
 {
     /// <summary>
     /// Creates a custom object.

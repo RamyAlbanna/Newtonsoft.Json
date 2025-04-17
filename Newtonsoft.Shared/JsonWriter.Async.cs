@@ -32,9 +32,9 @@ using System.Threading;
 using System.Numerics;
 #endif
 using System.Threading.Tasks;
-using Newtonsoft.Json.Utilities;
+using SharedNewtonsoft.Json.Utilities;
 
-namespace Newtonsoft.Json
+namespace SharedNewtonsoft.Json
 {
     public abstract partial class JsonWriter
 #if HAVE_ASYNC_DISPOSABLE
@@ -1794,7 +1794,7 @@ namespace Newtonsoft.Json
                         }
 #endif
 
-                        // write an unknown null value, fix https://github.com/JamesNK/Newtonsoft.Json/issues/1460
+                        // write an unknown null value, fix https://github.com/JamesNK/SharedNewtonsoft.Json/issues/1460
                         if (value == null)
                         {
                             return writer.WriteNullAsync(cancellationToken);
